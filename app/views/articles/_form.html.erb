@@ -1,0 +1,34 @@
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+     <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+     <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :price %><br>
+    <%= form.number_field :price %>
+     <% article.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+  <%= form.label :status %><br>
+  <%= @selectValue = form.select :status, ["public", "private", "archived"], selected: "public" %>
+ </div>
+  <h1>status is<%= @selectValue %></h1>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
