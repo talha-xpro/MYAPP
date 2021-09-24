@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby  2.7.4
+rails 6.1.0
 
-Things you may want to cover:
+Provide database name username and password in database.yml
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TO run A Project
+bundle install
+rake db:create
+rails db:migrate
+rails s
