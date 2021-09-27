@@ -25,9 +25,8 @@
 
   <div>
   <%= form.label :status %><br>
-  <%= @selectValue = form.select :status, ["public", "private", "archived"], selected: "public" %>
+  <%= form.select :status, ["public", "private", "archived"], selected: "public" %>
  </div>
-  <h1>status is<%= @selectValue %></h1>
   <div>
     <%= form.submit %>
   </div>
