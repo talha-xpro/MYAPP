@@ -1,13 +1,18 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @articles = Article.all
   end
 
   def show
     @article = Article.find_by(id: params[:id])
-    if @article.nil?
-      flash.now[:alert] = "Your book was not found"
-    end
+    flash.now[:notice] = "Your book was found"
+
+    # if @article.nil?
+    #   flash.now[:alert] = "Your book was not found"
+    #   redirect_to "index"
+    # end
   end
 
   def new
