@@ -1,6 +1,9 @@
 <h1><%= @article.title %></h1>
 <h1><%= @article.body %></h1>
 <h1><%= @article.price %></h1>
+<div>
+  <%= image_tag(@article.article_avatar, size: "200x200") if @article.article_avatar.attached? %>
+</div>
 
 <% if policy(@article).destroy? %>
   <ul>
