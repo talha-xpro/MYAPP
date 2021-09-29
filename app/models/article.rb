@@ -4,4 +4,6 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
   validates :price, presence: true
+  has_one_attached  :article_avatar, dependent: :destroy
+
 end

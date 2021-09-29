@@ -11,6 +11,10 @@
   <%= form.label :status %><br>
   <%= form.select :status, ["public", "private", "archived"], selected: "public" %>
 </p>
+ <div> 
+    <%= form.label :comment_avatar %>
+    <%= form.file_field :comment_avatar %>
+ </div>
   <p>
     <%= form.submit %>
   </p>
