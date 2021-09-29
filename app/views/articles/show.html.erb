@@ -1,12 +1,16 @@
 <h1><%= @article.title %></h1>
 <h1><%= @article.body %></h1>
 <h1><%= @article.price %></h1>
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-   <li><%= link_to "Destroy", article_path(@article),
-                   method: :delete,
-                   data: { confirm: "Are you sure?" } %></li>
-</ul>
+
+<% if policy(@article).destroy? %>
+  <ul>
+    <li><%= link_to "Edit", edit_article_path(@article) %></li>
+    <li><%= link_to "Destroy", article_path(@article),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></li>
+  </ul>
+<% end %>
+
 <h2>Comments</h2>
 <%= render @article.comments %>
 <h1>Add a comment<h1>
