@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
   around_action :around_method
 
-
   def index
     puts "Yielding index"
     @articles = Article.all
@@ -56,7 +55,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :price, :status,:article_avatar)
+    params.require(:article).permit(:title, :body, :price, :status, :article_avatar)
   end
 
   def around_method
@@ -66,5 +65,4 @@ class ArticlesController < ApplicationController
       puts "From around_action after yielding"
     end
   end
-
 end
