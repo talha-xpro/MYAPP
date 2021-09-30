@@ -10,3 +10,8 @@ bundle install
 rake db:create
 rails db:migrate
 rails s
+
+to run redis for queue bakend jobs
+REDIS_URL="redis://127.0.0.1:6379/12" bundle exec sidekiq -e development -C config/sidekiq.yml
+or 
+bundle exec sidekiq -e development -C config/sidekiq.yml
