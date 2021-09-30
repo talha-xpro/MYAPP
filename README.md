@@ -9,6 +9,7 @@ TO run A Project
 bundle install
 rake db:create
 rails db:migrate
+rals db:seed
 rails s
 
 to run redis for queue bakend jobs
