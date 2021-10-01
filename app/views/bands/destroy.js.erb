@@ -1,0 +1,4 @@
+$('.delete').bind('ajax:success',function(data,status,xhr){
+alert(JSON.stringify(xhr))
+$(this).closest('tr').fadeOut();
+});

@@ -11,17 +11,11 @@
   </head>
     <%= render "/layouts/nav" %>
 
-  <body>
-  <div class="jumbotron">
-  <% if notice %>
-   <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-   <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+    <body>
+      <div class="jumbotron">
         <%= yield %>
-        <p class="navbar-text float-right">
-</p>
       </div>
+      <p class="notice alert alert-light" ><%= notice %></p>
+      <p class="alert alert alert-light" ><%= alert %></p>
   </body>
 </html>
